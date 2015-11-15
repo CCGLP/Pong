@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Fronton</name>
+    <events>
+        <variable constant="0" name="Timer" sid="9297066864793332" static="0" type="number">0</variable>
+        <event-block sid="8246166945807349">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1796971357616216" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="8937450155647047" type="Bola">
+                    <param id="0" name="Object">Spawn</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="4631812167369664" type="Bola">
+                    <param id="0" name="Angle">random (-160, -120)</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="9163378953927315" type="Sprite">
+                    <param id="0" name="Angle">random (30,60)</param>
+                </action>
+                <action behavior="Turret" id="1" name="Add object to target" sid="6905591044735944" type="Spawn">
+                    <param id="0" name="Target">Bola</param>
+                </action>
+                <action id="-9" name="Set value" sid="2543999676483117" type="System">
+                    <param id="0" name="Variable">ScoreEnemy</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="1618707047855724" type="System">
+                    <param id="0" name="Variable">ScorePlayer</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8384985510445589" type="System">
+                    <param id="0" name="Variable">Timer</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2567801813380524">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="637789571421053" type="Bola">
+                    <param id="0" name="Object">Win</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="532498162886643" type="Bola">
+                    <param id="0" name="Object">Spawn</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-10" name="Add to" sid="2702093659618145" type="System">
+                    <param id="0" name="Variable">ScoreEnemy</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="24503911062103" type="Score2">
+                    <param id="0" name="Text">ScoreEnemy</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="7401943463791515" type="Bola">
+                    <param id="0" name="Angle">random (-60,-30)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="9722854299423783" title="Win TEXT3">
+            <sub-events>
+                <event-block sid="5080544686507044">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3875552052271118" type="System">
+                            <param id="0" name="First value">ScoreEnemy</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">11</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="8153198680089051" type="System">
+                            <param id="0" name="Layout">WinPlayer2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="4685094762263404">
+            <conditions>
+                <condition behavior="Turret" id="1" name="On shoot" sid="1703833190069659" type="Spawn" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="5295360817777522" type="Spawn">
+                    <param id="0" name="Object">Sprite</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="8677091228114301" type="Sprite">
+                    <param id="0" name="Angle">Spawn.Angle</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7196158574712585">
+            <conditions>
+                <condition id="2" name="Key is down" sid="7805948189156188" type="Keyboard">
+                    <param id="0" name="Key">87 (W)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="7152778862163067" type="Paleta1">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1522025932123228">
+            <conditions>
+                <condition id="2" name="Key is down" sid="7439960163517582" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="9272765352143887" type="Paleta1">
+                    <param id="0" name="Control">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6901705516997287">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="4348577683693112" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="6930832058101537" type="System">
+                    <param id="0" name="Variable">Timer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="9935729666324103" type="Timer">
+                    <param id="0" name="Text">Timer</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

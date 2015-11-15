@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>START</name>
+    <events>
+        <event-block sid="5785939755222691">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="1255755024183528" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Sprite2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="2884188529850531" type="System">
+                    <param id="0" name="Layout">Multi</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8225186325621706">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="7774721264375416" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">SoloButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="3099962040237733" type="System">
+                    <param id="0" name="Layout">Fronton</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6115561538143878">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="700453526385802" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">IA</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="2660245214160245" type="System">
+                    <param id="0" name="Layout">GameIA</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="678497888534935">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="2480120532257985" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Twitter</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Open URL in new window" sid="4347398382931396" type="Browser">
+                    <param id="0" name="URL">&quot;https://twitter.com/CCGLP_DEV&quot;</param>
+                    <param id="1" name="Tag">&quot;Twitter&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

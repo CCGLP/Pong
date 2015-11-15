@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>PONG</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author>CCGLP</author>
+    <author-email>carlosgolfer@gmail.com</author-email>
+    <author-website>ccglp.itch.io</author-website>
+    <app-id>com.ccglp.pong</app-id>
+    <unique-id>1ar2qdymbcfz6</unique-id>
+    <saved-with-version>20402</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1280</width>
+        <height>720</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>START</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Paleta1" sid="1801663176196945">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="8Direction" sid="2213539245341664">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="2848375423963331">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7515118243351889" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Bola" sid="6197132112106584">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="2289411166979484">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="348104677719264" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Invisible" sid="2515269070721681">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="7498222872030985">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4086263766479748" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Red" sid="1113675650058779">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\ccglp\Desktop\images\Untitled-1_03.png" />
+        </object-type>
+        <object-type name="Enemy" sid="4756183415581574">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="7609421949981508">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="207369424523383">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9318868010253341" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Spawn" sid="6747577148134029">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Turret" sid="7935754884098637">
+                    <behavior id="Turret" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8527837237842628" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="3332787934802601">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="5465995314626937">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="6211412352407987">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="5631416764947559">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3335179857604597" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Score1" sid="8513788976252953">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Score2" sid="375093868053268">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Win" sid="5811731960317679">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5676471170176316" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Win2" sid="6477732413598106">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3316146063601259" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="WinTextPlayer1" sid="4168240452043599">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="WinTextPlayer2" sid="6994297753046585">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Keyboard" sid="7523520921531796">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="StartBackground" sid="7207248524500932">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6712258603433247" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ccglp\Desktop\MiniPong\MiniPongStart-01.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SoloButton" sid="7392706022497657">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9359710016188223" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ccglp\Desktop\MiniPong\MiniPongStart-02.png">
+                        <collision-poly>
+                            <point x="0.0625" y="0.272727" />
+                            <point x="0.5" y="0.00909091" />
+                            <point x="0.9375" y="0.272727" />
+                            <point x="0.995536" y="0.5" />
+                            <point x="0.9375" y="0.727273" />
+                            <point x="0.5" y="0.990909" />
+                            <point x="0.0625" y="0.727273" />
+                            <point x="0.00446429" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="IA" sid="4664734324959095">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3631639374012439" speed="5">
+                    <frame duration="1" hotspotX="0.457778" hotspotY="0.5" original-source="C:\Users\ccglp\Desktop\MiniPong\MiniPongStart-03.png">
+                        <collision-poly>
+                            <point x="0.0266667" y="0.354545" />
+                            <point x="0.453333" y="0.00909091" />
+                            <point x="0.933333" y="0.254545" />
+                            <point x="0.995556" y="0.5" />
+                            <point x="0.933333" y="0.745455" />
+                            <point x="0.453333" y="0.990909" />
+                            <point x="0.0266667" y="0.645455" />
+                            <point x="0.00888887" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="1326148224868097">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3583083174860045" speed="5">
+                    <frame duration="1" hotspotX="0.502222" hotspotY="0.477477" original-source="C:\Users\ccglp\Desktop\MiniPong\MiniPongStart-04.png">
+                        <collision-poly>
+                            <point x="0.0666667" y="0.261261" />
+                            <point x="0.497778" y="0.018018" />
+                            <point x="0.928889" y="0.27027" />
+                            <point x="0.991111" y="0.477477" />
+                            <point x="0.942222" y="0.711712" />
+                            <point x="0.497778" y="0.990991" />
+                            <point x="0.0533333" y="0.720721" />
+                            <point x="0.00444444" y="0.477477" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="3111507860549719">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="IaPaddle" sid="2054463430612828">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="4970545570153301">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="8535362591795962">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="729110262001908" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SolidFronton" sid="8561953796292919">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="72962209855253">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3258996588559611" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Twitter" sid="2236104720405972">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6825015248083273" speed="5">
+                    <frame duration="1" hotspotX="0.473389" hotspotY="0.498294" original-source="C:\Users\ccglp\Desktop\MiniPong\ios_homescreen_icon.png">
+                        <collision-poly>
+                            <point x="0.256303" y="0.233788" />
+                            <point x="0.473389" y="0.308874" />
+                            <point x="0.827731" y="0.0665529" />
+                            <point x="0.869748" y="0.498294" />
+                            <point x="0.721289" y="0.800341" />
+                            <point x="0.473389" y="0.972696" />
+                            <point x="0.102241" y="0.950512" />
+                            <point x="0.0728291" y="0.498294" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Browser" sid="7621993238982182">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="Timer" sid="9749365117850197">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>GameIA.xml</layout>
+        <layout>Fronton.xml</layout>
+        <layout>Multi.xml</layout>
+        <layout>WinPlayer1.xml</layout>
+        <layout>WinPlayer2.xml</layout>
+        <layout>START.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>GameIA.xml</event-sheet>
+        <event-sheet>START.xml</event-sheet>
+        <event-sheet>Fronton.xml</event-sheet>
+        <event-sheet>LocalMultiplayer.xml</event-sheet>
+        <event-sheet>WinScreen.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="14" />
+        <global-instance type="Mouse" uid="19" />
+        <global-instance type="Browser" uid="44" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

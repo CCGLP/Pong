@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GameIA</name>
+    <events>
+        <variable constant="0" name="ScorePlayer" sid="2271177451407577" static="0" type="number">0</variable>
+        <variable constant="0" name="ScoreEnemy" sid="2261570031923158" static="0" type="number">0</variable>
+        <event-block sid="3726014950176228">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="44970750413628" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="1457468932461553" type="Bola">
+                    <param id="0" name="Object">Spawn</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="5028538617967643" type="Bola">
+                    <param id="0" name="Angle">random (-160, -120)</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="9405101707156276" type="IaPaddle">
+                    <param id="0" name="Angle">-90</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="9094718481779524" type="Sprite">
+                    <param id="0" name="Angle">random (30,60)</param>
+                </action>
+                <action behavior="Turret" id="1" name="Add object to target" sid="1418297225154404" type="Spawn">
+                    <param id="0" name="Target">Bola</param>
+                </action>
+                <action id="-9" name="Set value" sid="8168694515606152" type="System">
+                    <param id="0" name="Variable">ScoreEnemy</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="6044680149183818" type="System">
+                    <param id="0" name="Variable">ScorePlayer</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2216611780599571">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="8612588532327949" type="System">
+                    <param id="0" name="First value">Bola.Y</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">IaPaddle.Y</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="9523471826717511" type="IaPaddle">
+                    <param id="0" name="Angle">-90</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7114271390767917">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="2407582956192116" type="System">
+                    <param id="0" name="First value">Bola.Y</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">IaPaddle.Y</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="3328816382128795" type="IaPaddle">
+                    <param id="0" name="Angle">90</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5742962253786735">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="8830399372383569" type="Bola">
+                    <param id="0" name="Object">Win</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="2426219793933383" type="Bola">
+                    <param id="0" name="Object">Spawn</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-10" name="Add to" sid="7387979735077755" type="System">
+                    <param id="0" name="Variable">ScoreEnemy</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="1900451294807669" type="Score2">
+                    <param id="0" name="Text">ScoreEnemy</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2345618113655326" type="Bola">
+                    <param id="0" name="Angle">random (-60,-30)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2007652167859183">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="2829755521910171" type="Bola">
+                    <param id="0" name="Object">Win2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="5211620919847049" type="Bola">
+                    <param id="0" name="Object">Spawn</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-10" name="Add to" sid="829781771213875" type="System">
+                    <param id="0" name="Variable">ScorePlayer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="1098033944720592" type="Score1">
+                    <param id="0" name="Text">ScorePlayer</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="787167579035039" type="Bola">
+                    <param id="0" name="Angle">random (-160,-120)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="4297630368505233" title="Win TEXT">
+            <sub-events>
+                <event-block sid="6880121325218243">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="4633695887384892" type="System">
+                            <param id="0" name="First value">ScorePlayer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">11</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="2629394871687319" type="System">
+                            <param id="0" name="Layout">WinPlayer1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="724064878035584">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3782773205158381" type="System">
+                            <param id="0" name="First value">ScoreEnemy</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">11</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="972479647687442" type="System">
+                            <param id="0" name="Layout">WinPlayer2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="1862976263460819">
+            <conditions>
+                <condition behavior="Turret" id="1" name="On shoot" sid="2580367558271587" type="Spawn" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="8630175235590176" type="Spawn">
+                    <param id="0" name="Object">Sprite</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="4574495094682385" type="Sprite">
+                    <param id="0" name="Angle">Spawn.Angle</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3305650963918558">
+            <conditions>
+                <condition id="2" name="Key is down" sid="7153414226100707" type="Keyboard">
+                    <param id="0" name="Key">87 (W)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="1498478394721651" type="Paleta1">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6863112572003348">
+            <conditions>
+                <condition id="2" name="Key is down" sid="9488715281502156" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="5216336684657241" type="Paleta1">
+                    <param id="0" name="Control">3</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
